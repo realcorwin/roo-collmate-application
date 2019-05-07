@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{layouts/default-list-layout}">
+  <head id="head">
+
+    <title data-th-text="|#{label_show_entity(#{label_cd})}|">Show Cd - Spring Roo application</title>
+
+  </head>
+
+  <body id="body">
+
+    <header role="banner">
+      <!-- Content replaced by layout of the page displayed -->
+    </header>
+
+    <!--CONTAINER-->
+    <div class="container bg-container">
+      <!-- CONTENT -->
+      <!--
+        Only the inner content of the following tag "section" is included
+        within the template, in the section "content"
+      -->
+      <section data-layout-fragment="content" data-th-object="${cd}">
+        <div class="container-fluid content">
+
+          <!-- CONTENT -->
+          <h1 data-th-text="#{label_show_entity(#{label_cd})}">Show Cd</h1>
+
+            <div id="mainEntityFieldSet">
+              <h2 data-th-text="#{label_data_entity(#{label_cd})}">Cd data</h2>
+              <ul class="list-unstyled" id="containerFields">
+                  <li id="cd-name-field" data-z="ad6e768c">
+            	      <strong data-th-text="#{label_cd_name}">name</strong>
+                    <span data-th-text="*{{name}}">nameValue</span>
+         	        </li>
+                  <li id="cd-performer-field" data-z="78543b32">
+            	      <strong data-th-text="#{label_cd_performer}">performer</strong>
+                    <span data-th-text="*{{performer}}">performerValue</span>
+         	        </li>
+                  <li id="cd-releaseyear-field" data-z="e93687d2">
+            	      <strong data-th-text="#{label_cd_releaseyear}">releaseYear</strong>
+                    <span data-th-text="*{{releaseYear}}">releaseYearValue</span>
+         	        </li>
+                  <li id="cd-diskcount-field" data-z="7902a92">
+            	      <strong data-th-text="#{label_cd_diskcount}">diskCount</strong>
+                    <span data-th-text="*{{diskCount}}">diskCountValue</span>
+         	        </li>
+                  <li id="cd-medium-field" data-z="3833d20c">
+            	      <strong data-th-text="#{label_cd_medium}">medium</strong>
+                    <span data-th-text="*{{medium}}">mediumValue</span>
+         	        </li>
+                  <li id="cd-label-field" data-z="927e2ff2">
+            	      <strong data-th-text="#{label_cd_label}">label</strong>
+                    <span data-th-text="*{{label}}">labelValue</span>
+         	        </li>
+                  <li id="cd-status-field" data-z="134db66c">
+            	      <strong data-th-text="#{label_cd_status}">status</strong>
+                    <span data-th-text="*{{status}}">statusValue</span>
+         	        </li>
+                  <li id="cd-added-field" data-z="3f3a1e72">
+            	      <strong data-th-text="#{label_cd_added}">added</strong>
+                    <span data-th-text="*{{added}}">addedValue</span>
+         	        </li>
+              </ul>
+            </div>
+
+
+          <div class="clearfix">
+            <div class="pull-right">
+             <a id="Cd_edit" href="edit.html" class="btn btn-primary" data-th-title="#{label_goEdit}" data-th-href="${@linkBuilder.of('CdsItemThymeleafController').to('editForm').with('cd', cd.id)}" data-th-text="#{label_edit}">Edit</a>
+            </div>
+          </div>
+
+
+          <div class="clearfix">
+            <div class="pull-left">
+              <a id="Cd_list" href="list.html" class="btn btn-default" data-th-title="#{label_goBack}" data-th-href="${@linkBuilder.of('CdsCollectionThymeleafController').to('list')}">
+  	             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+  	             <span data-th-text="#{label_back}">Back</span>
+  	          </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <!-- /CONTENT -->
+  </div>
+  <!-- /CONTAINER -->
+
+  <footer class="container">
+    <!-- Content replaced by layout of the page displayed -->
+  </footer>
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so that the pages load faster -->
+  <!-- JavaScript loaded by layout of the page displayed -->
+  <!--
+       Only the inner content of the following tag "javascript" is included
+       within the template, in the div "javascript"
+      -->
+  <div data-layout-fragment="javascript">
+  </div>
+
+  </body>
+
+</html>

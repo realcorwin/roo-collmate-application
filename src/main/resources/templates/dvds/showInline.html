@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{layouts/default-list-layout}">
+    <head id="head">
+
+    <title data-th-text="|#{label_show_entity(#{label_dvd})}|">Show Dvd - Spring Roo application</title>
+
+  </head>
+
+  <body id="body">
+
+    <header role="banner">
+      <!-- Content replaced by layout of the page displayed -->
+    </header>
+
+    <!--CONTAINER-->
+    <div class="container bg-container">
+      <!-- CONTENT -->
+      <!--
+        Only the inner content of the following tag "section" is included
+        within the template, in the section "content"
+      -->
+      <section data-th-fragment="inline-content" data-layout-fragment="content" data-th-object="${dvd}">
+        <div>
+
+          <!-- CONTENT -->
+            <div id="mainEntityFieldSet">
+              <ul class="list-unstyled" id="containerFields">
+                  <li id="dvd-name-field" data-z="2ca23b07">
+            	      <strong data-th-text="#{label_dvd_name}">name</strong>
+                    <span data-th-text="*{{name}}">nameValue</span>
+         	        </li>
+                  <li id="dvd-releaseyear-field" data-z="ca2ed2f7">
+            	      <strong data-th-text="#{label_dvd_releaseyear}">releaseYear</strong>
+                    <span data-th-text="*{{releaseYear}}">releaseYearValue</span>
+         	        </li>
+                  <li id="dvd-diskcount-field" data-z="57fafaf7">
+            	      <strong data-th-text="#{label_dvd_diskcount}">diskCount</strong>
+                    <span data-th-text="*{{diskCount}}">diskCountValue</span>
+         	        </li>
+                  <li id="dvd-format-field" data-z="aafd5b87">
+            	      <strong data-th-text="#{label_dvd_format}">format</strong>
+                    <span data-th-text="*{{format}}">formatValue</span>
+         	        </li>
+                  <li id="dvd-lang-field" data-z="291cdaa7">
+            	      <strong data-th-text="#{label_dvd_lang}">lang</strong>
+                    <span data-th-text="*{{lang}}">langValue</span>
+         	        </li>
+                  <li id="dvd-status-field" data-z="94a24827">
+            	      <strong data-th-text="#{label_dvd_status}">status</strong>
+                    <span data-th-text="*{{status}}">statusValue</span>
+         	        </li>
+                  <li id="dvd-added-field" data-z="a67ee957">
+            	      <strong data-th-text="#{label_dvd_added}">added</strong>
+                    <span data-th-text="*{{added}}">addedValue</span>
+         	        </li>
+              </ul>
+            </div>
+
+        </div>
+
+      </section>
+      <!-- /CONTENT -->
+  </div>
+  <!-- /CONTAINER -->
+
+  <footer class="container">
+    <!-- Content replaced by layout of the page displayed -->
+  </footer>
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so that the pages load faster -->
+  <!-- JavaScript loaded by layout of the page displayed -->
+  <!--
+       Only the inner content of the following tag "javascript" is included
+       within the template, in the div "javascript"
+      -->
+  <div data-layout-fragment="javascript">
+  </div>
+
+  </body>
+
+</html>

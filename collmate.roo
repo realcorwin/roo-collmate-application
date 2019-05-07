@@ -1,0 +1,43 @@
+project setup --topLevelPackage dik.roo.collmate
+jpa setup --provider HIBERNATE --database H2_IN_MEMORY
+enum type --class ~.domain.reference.Status
+enum constant --name OK
+enum constant --name Away
+enum constant --name Lost
+enum constant --name Expected
+enum constant --name Undefined
+entity jpa --class ~.domain.Cd --sequenceName CD_SEQ
+entity jpa --class ~.domain.Dvd --sequenceName DVD_SEQ
+focus --class ~.domain.Cd
+field string --fieldName name --notNull
+field string --fieldName performer
+field string --fieldName releaseYear
+field string --fieldName diskCount
+field string --fieldName medium
+field string --fieldName label
+field enum --fieldName status --type ~.domain.reference.Status
+field date --fieldName added --type java.util.Calendar --past
+focus --class ~.domain.Dvd
+field string --fieldName name --notNull
+field string --fieldName releaseYear
+field string --fieldName diskCount
+field string --fieldName format
+field string --fieldName lang
+field enum --fieldName status --type ~.domain.reference.Status
+field date --fieldName added --type java.util.Calendar --past
+repository jpa --all
+service --all 
+web mvc setup 
+web mvc view setup --type THYMELEAF
+web mvc templates setup --type THYMELEAF 
+web mvc controller --all --responseType JSON --pathPrefix /rest
+web mvc controller --all --responseType THYMELEAF
+web mvc finder --all --responseType THYMELEAF
+test unit --class ~.domain.Cd
+test unit --class ~.domain.Dvd
+test integration --class ~.repository.CdRepository 
+test integration --class ~.repository.DvdRepository
+test integration --class ~.web.CdsCollectionJsonController
+test integration --class ~.web.CdsCollectionThymeleafController
+test integration --class ~.web.DvdsCollectionJsonController
+test integration --class ~.web.DvdsCollectionThymeleafController
